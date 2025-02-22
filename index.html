@@ -1,0 +1,385 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("2025-05-01T08:30:00.000-04:00");
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Display the result in the element with id="demo"
+  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+
+  // If the count down is finished, write some text
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
+</script>
+
+
+<html>
+	<head>
+		<title>Workshop IROS 2025</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<!-- table style-->
+		<style>
+			a{
+				color: white; 
+			}
+			#schedule_tab {
+			  font-family: Arial, Helvetica, sans-serif;
+			  border-collapse: collapse;
+			  width: 100%;
+			}
+
+			#schedule_tab td, #schedule_tab th {
+			  border: 2px solid #ddd;
+			  padding: 14px;
+			  color: white;
+			}
+
+			#schedule_tab tr:nth-child(even){background-color: #9fabbd;}
+			
+			#schedule_tab tr:hover {background-color: #a9bedf;}
+
+			#schedule_tab th {
+			  padding-top: 12px;
+			  padding-bottom: 12px;
+			  text-align: left;
+			  background-color: #29a3c5;
+			  color: white;
+			}
+		</style>
+	</head>
+	<body class="is-preload">
+
+		<!-- Sidebar -->
+			<section id="sidebar">
+				<div class="inner">
+					<nav>
+						<ul>
+							<li><a href="#intro">Home</a></li>
+							<li><a href="#content">Content</a></li>
+							<li><a href="#schedule">Schedule</a></li>	
+							<li><a href="#papers">Call for Papers</a></li>
+							
+							<li><a href="#talks">Invited speakers</a></li>
+							<li><a href="#org">Organizers</a></li>	
+							<!--li><a href="#collab">Links</a></li-->														
+							<li><a href="#contact">Contact</a></li>
+						</ul>
+					</nav>
+				</div>
+			</section>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Live -->
+					<!--section id="live" class="wrapper style3 fullscreen fade-up">
+						<div class="inner">
+							<h2>1st Workshop on Embodied AI and Robotic for future scientifc discovery @ <a href="http://iros25.org/">IROS2025</a> </h2>
+							
+							
+
+
+						</div>
+					</section-->
+
+<!-- Intro -->
+					<section id="intro" class="wrapper style1 fullscreen fade-up">
+						<div class="inner">
+
+							<!--h1 id="demo"></h1-->
+
+							<h2>1st Workshop on Embodied AI and Robotic for future scientifc discovery @ <a href="http://iros25.org/" target="_blank">IROS2025</a>  will be held on 19th Oct.2025 8:30 GMT+8, Room TBD</h2>
+
+							<iframe width="560" height="315" src="https://www.youtube.com/watch?v=zO1IUirTR8o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+							
+							
+							
+							<p>
+								<!-- TODO: -->
+								 abstract
+							</p>
+							
+							
+							
+							<h3> This is the 1st Workshop on Embodied AI and Robotic for future scientifc discovery in IROS</h3>
+							
+							<h3> what is Embodied AI and Robotic for future scientifc discovery ?</h3>
+							<h3> see this  table below:  </h3>
+							<!-- TODO: give example papers pubed in NS et. -->
+							
+							
+
+
+						</div>
+					</section>
+
+
+				
+
+					<!-- Method -->
+					<section id="content" class="wrapper style2 fade-up">
+						<div class="inner">
+							<h2>Content</h2>
+							<h3>Topics</h3>
+
+							<p> 
+								The workshop aims to :
+
+<ul>
+  <li>AI4Sci</li>
+  <li> Robotics for Science </li>
+  <li>Application-specific challenges: safety, ethics etc.</li>
+  <li>TBD</li>
+</ul>
+							
+							</p>
+
+							
+							
+							<p> </p>	
+
+						</div>
+					</section>
+
+
+				<!-- Schedule -->
+					<section id="schedule" class="wrapper style3 spotlights">
+						<div class="inner">
+							<h2>Schedule <a href="schedule_panel.pdf" target="_blank">[PDF]</a></h2>
+							<hr style="width:80%;text-align:left;margin-left:5">
+							<div class="row">
+							  									
+							</div>
+							
+							<h3>Time Zone: GMT+08</h3>
+							<table id="schedule_tab">
+						  <tr>
+						    <th>Time</th>
+						    <th>Activity</th>
+						  </tr>
+						  <tr>
+						    <td>08:30 - 08:45</td>
+						    <td>Welcome <a href="https://www.youtube.com/watch?v=zO1IUirTR8o" target="_blank">[Video]</a></td>
+						  </tr>
+						  <tr>
+						    <td>08:45 - 09:15</td>
+						    <td> <b>speaker A:</b> topic <a href="https://youtu.be/" target="_blank">[Video]</a>
+								</td>
+						  </tr>
+						  <tr>
+						    <td>09:15 - 09:45</td>
+						    <td> <b>speaker A:</b> topic <a href="https://youtu.be/" target="_blank">[Video]</a></td>
+						  </tr>
+						  	<tr>
+						    <td>09:45 - 10:25</td>
+						    <td>Spotlight talks #1 <a href="https://youtu.be/" target="_blank">[Video]</a>
+						    	<ul>								
+						    	<li> <b>A</b>, AUTHOR , A <a href="spotlight/A.pdf" target="_blank">[PDF]</a>  <a href="https://youtu.be/" target="_blank">[Video]</a> <br></li>
+						    	<li> <b>B</b>,  <a href="spotlight/B.pdf" target="_blank">[PDF]</a>  <a href="https://youtu.be" target="_blank">[Video]</a> <br></li>
+								</ul>
+								
+						    </td>
+						  </tr>
+						  <tr>
+						    <td>10:25 - 11:00</td>
+						    <td>Coffee break  + Posters session #1
+						    	<ul>								
+						    	<li> <b>A</b>,  A2 - title <a href="spotlight/poster1.pdf" target="_blank">[PDF]</a>  <a href="https://youtu.be/" target="_blank">[Video]</a> <br></li>
+						    	
+								</ul>
+
+
+						    </td>
+						  </tr>
+						  
+						  					  
+						  <tr>
+						    <td>17:00 – 17:30</td>
+						    <td>Panel discussion <a href="https://youtu.be/" target="_blank">[Video]</a></td>
+						  </tr>
+						  <tr>
+						    <td>17:30 – 17:45</td>
+						    <td>Closing remarks</td>
+						  </tr>
+						</table>
+						
+							
+						
+
+
+					</section>
+
+					<!-- call for papers -->
+					<section id="papers" class="wrapper style4 fullscreen fade-up">
+						<div class="inner">
+							<h2>Call for papers</h2>					
+							
+							
+							<p> We invite participants to submit extended abstracts <b>3+n</b> pages, with n pages (no page-limit) for the bibliography, in the <a href="https://journals.ieeeauthorcenter.ieee.org">IEEE conference style</a>. </p>
+							<p> Submissions will be reviewed by experts of their respective field. The accepted abstracts will be made available on the workshop website but will not appear in the official IEEE conference proceedings. 
+							 Participants are encouraged to submit their recent work on the topics of interest mentioned above. 
+							<!--contributions that highlight challenges in their particular sub-field as well as works that show potential synergies of combining different subfields for deformable objects manipulation. -->
+							Contributions are encouraged, but are not required, to be original. </p>
+							<p> The review process will be single-blind, meaning the submitted paper does not need to be anonymized.</p>
+							<p> Abstracts can be submitted through xxx: <a href="https://" target="_blank" class="to-red-mobile">https:</a>.
+							</p>
+							
+
+							<p> <h3>Important dates:</h3>
+
+							<ul>
+								  <!-- <li>Submission Deadline: <s>01.09.2025 AOE </s><b>17.09.2025 AOE </b></li> -->
+								  <li>Submission Deadline: <b>17.09.2025 AOE </b></li>
+								  <li>Notification date: <b>20.09.2025 AOE</b></li>
+								  <li>Final submission: <b>10.10.2025 AOE</b></li>
+								  <li>Workshop date: <b> 19.10.2025 AOE</b> 
+ </li>
+							</ul>
+
+							</p>
+							
+							
+
+
+						</div>
+					</section>
+
+
+
+					<!-- Schedule -->
+					<section id="talks" class="wrapper style2 spotlights">
+						<div class="inner">
+							<h2>Invited Speakers (alphabetical order)</h2>
+
+
+							<div class="row">
+							  <div class="column">
+							    <img src="imgs/A.jpg" alt=" A" class="img-list">
+							  </div>
+							  <div class="column">
+									<p></p>
+				    				<h3 class='name-list'><b>  A </b></h3> 
+									
+				    				<div class='info-list'>
+									<br> 
+									Postdoctoral Researcher 
+									<br>
+									Stanford University, United States 
+									<br>
+									<a href="https:///" target="_blank">Personal website</a>  
+									<br>	
+									</div>
+									<p class='talk-list'>
+									<b> Talk title:</b> xx <br>
+									</p>
+							  </div>
+							</div>
+
+							<hr style="width:80%;text-align:left;margin-left:5">
+
+
+					</section>
+
+					<!-- org -->
+					<section id="org" class="wrapper style3 spotlights">
+						<div class="inner">
+							<h2>Organizers (alphabetical order)</h2>
+							<ul>
+							  <li>Pengsong Zhang, University of Toranto, Canada</li>
+							  <li>Heng Zhang, iit, Italy</li>
+							  <li>you</li>					  
+							  
+							</ul>
+
+							<h2>Co-Organizers</h2>
+							<ul>
+							  <li>a, KTH Royal Institute of Technology, Sweden</li>
+							  <li>b, University of Cassino and Southern Lazio, Italy</li>
+							  <li>c, Carnegie Mellon University, USA</li>
+							  
+							</ul>
+					</section>
+
+
+
+					<!-- collaberations -->
+					<section id="collab" class="wrapper style4 fade-up">
+						<div class="inner">
+							<h2>Links</h2>
+							<ul>
+							<li>
+							  <b>Conference website:</b> Link to the conference website <a href="https:">https:</a>
+							</li>
+							<li>
+								<b>company A</b>  </li>
+							</ul>
+						</div>
+					</section>
+
+							
+
+					
+					<!-- contact -->
+					<section id="contact" class="wrapper style1 fade-up">
+						<div class="inner">
+							<h2>Contact</h2>
+							 <p> If you have any questions please contact Heng Zheng at the email: heng.zhang AT iit DOT it</b>  </p>
+							
+							
+										
+							
+						</div>
+					</section>
+
+
+
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer" class="wrapper style1-alt">
+				<div class="inner">
+					Participants are required to abide by the <a href="https://www.ieee-ras.org/about-ras/diversity-page/ieee-ras-code-of-conduct" target="_blank">IEEE RAS Code of Conduct</a>
+				<ul class="copyright">
+						<li> &copy; All rights reserved </li>
+						<!-- <li>Design: <a href="http://html5up.net">HTML5 UP</a></li> -->
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
