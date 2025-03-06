@@ -38,6 +38,7 @@ var x = setInterval(function() {
 <html>
 	<head>
 		<title>Workshop IROS 2025</title>
+		<link href="https://fonts.googleapis.com/css2?family=Lora:wght@700&display=swap" rel="stylesheet">
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -70,6 +71,62 @@ var x = setInterval(function() {
 			  background-color: #29a3c5;
 			  color: white;
 			}
+
+			/* Background image with transparency */
+			#intro {
+				position: relative;
+				background: url('images/bg.png') no-repeat center center/cover;
+				/*background-color: rgba(235, 237, 237, 0.579); /* Adjust transparency here */ 
+				background-blend-mode: overlay;
+				color: white;
+				padding: 2em;
+			}
+
+			#intro .inner {
+				background-color: rgba(60, 134, 131, 0.623); /* Slightly darker background for text */
+				padding: 2em;
+				border-radius: 10px;
+			}
+
+			.image-row {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				gap: 10px;
+				flex-wrap: wrap;
+			}
+
+			.full-size-img {
+				/* max-width: 100%; */
+				height: auto;
+				flex: 1 1 auto;
+				/* max-height: 120px; */
+			}
+			.inner {
+				width: auto; /* Width adjusts to content */
+				height: auto; /* Height adjusts to content */
+				padding: 20px; /* Optional: Add padding for spacing */
+				margin: 0 auto; /* Optional: Center the container horizontally */
+				display: flex; /* Use Flexbox for flexible layout */
+				flex-direction: column; /* Stack children vertically */
+				align-items: center; /* Center children horizontally */
+				justify-content: center; /* Center children vertically */
+				text-align: justify; /* Justify text content */
+				max-width: 800px; /* Optional: Limit the width for better readability */
+			}
+			.white_inner {
+				width: 95vh; /* Width adjusts to content */
+				height: 30vh; /* Height adjusts to content */
+				padding: 20px; /* Optional: Add padding for spacing */
+				margin: 0 auto; /* Optional: Center the container horizontally */
+				display: flex; /* Use Flexbox for flexible layout */
+				flex-direction: column; 
+				align-items: center; /* Center children horizontally */
+				justify-content: center; /* Center children vertically */
+				text-align: justify; /* Justify text content */
+				/* max-width: 800px;  */
+				background-color: rgba(173, 198, 197, 0.678);
+			}
 		</style>
 	</head>
 	<body class="is-preload">
@@ -86,7 +143,7 @@ var x = setInterval(function() {
 							
 							<li><a href="#talks">Invited speakers</a></li>
 							<li><a href="#org">Organizers</a></li>	
-							<!--li><a href="#collab">Links</a></li-->														
+							<li><a href="#sponsors">sponsors</a></li>														
 							<li><a href="#contact">Contact</a></li>
 						</ul>
 					</nav>
@@ -96,41 +153,24 @@ var x = setInterval(function() {
 		<!-- Wrapper -->
 			<div id="wrapper">
 
-				<!-- Live -->
-					<!--section id="live" class="wrapper style3 fullscreen fade-up">
-						<div class="inner">
-							<h2>1st Workshop on Embodied AI and Robotic for future scientifc discovery @ <a href="http://iros25.org/">IROS2025</a> </h2>
-							
-							
-
-
-						</div>
-					</section-->
-
-<!-- Intro -->
+				<!-- Intro -->
 					<section id="intro" class="wrapper style1 fullscreen fade-up">
 						<div class="inner">
-
-							<!--h1 id="demo"></h1-->
-
 							<h1>Embodied AI and Robotic <br>
-								for future scientifc discovery</h1> <h3>-- 1st Workshop on @ <a href="http://iros25.org/" target="_blank">IROS2025</a>  will be held on 19th Oct.2025 8:30 GMT+8, Room TBD</h3>
+								for future scientifc discovery</h1> 
+							<h3>-- 1st Workshop on @ <a href="http://iros25.org/" target="_blank">IROS2025</a>  will be held on 19th Oct.2025 8:30 GMT+8, Room TBD</h3>
 
 							<br>
-							<iframe width="860" height="485" 
-								src="https://www.youtube.com/embed/zO1IUirTR8o" 
-								title="YouTube video player" 
-								frameborder="0" 
-								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-								allowfullscreen>
-							</iframe>
-							
-							
 							<br>
 							<br>
-							<div class="inner">
-								<h2>Organizers</h2>
+							<p>
+								<!-- TODO: -->
+								The accelerating pace of scientific research demands more efficient, accurate, and comprehensive methodologies that can transcend the limitations of traditional research approaches. Current scientific practices face significant challenges: manual experimentation is time-consuming and resource-intensive, while multidisciplinary research requires integration of knowledge that often exceeds individual researchers' expertise. This workshop explores a transformative vision: the development of autonomous AI-driven agentic and robotic systems capable of conducting end-to-end scientific research across multiple disciplines.
+								Recent advances in foundation models like large language models and embodied robotics present unprecedented opportunities to evolve from purely virtual AI scientists to embodied robotic researchers that can actively engage in a complete research lifecycle. This workshop brings together experts from robotics, AI, and various scientific domains to discuss the development of systems that can autonomously perform the scientific research lifecycle, literature reviews, generate hypotheses, conduct physical experiments, and synthesize findings into scholarly manuscripts.
 								
+							</p>
+							<div class="white_inner">
+							<h2>Organizers</h2>
 								<div class="image-row">
 									<img src="images/university-of-toronto-vector-logo.png" alt="UoT" class="full-size-img">
 									<img src="images/iit.png" alt="iit" class="full-size-img">
@@ -142,15 +182,6 @@ var x = setInterval(function() {
 							</div>
 							<br>
 							<br>
-							<p>
-								<!-- TODO: -->
-								The accelerating pace of scientific research demands more efficient, accurate, and comprehensive methodologies that can transcend the limitations of traditional research approaches. Current scientific practices face significant challenges: manual experimentation is time-consuming and resource-intensive, while multidisciplinary research requires integration of knowledge that often exceeds individual researchers' expertise. This workshop explores a transformative vision: the development of autonomous AI-driven agentic and robotic systems capable of conducting end-to-end scientific research across multiple disciplines.
-								Recent advances in foundation models like large language models and embodied robotics present unprecedented opportunities to evolve from purely virtual AI scientists to embodied robotic researchers that can actively engage in a complete research lifecycle. This workshop brings together experts from robotics, AI, and various scientific domains to discuss the development of systems that can autonomously perform the scientific research lifecycle, literature reviews, generate hypotheses, conduct physical experiments, and synthesize findings into scholarly manuscripts.
-								
-							</p>
-							
-							
-							
 							<h3> This is the 1st Workshop on Embodied AI and Robotic for future scientifc discovery in IROS</h3>
 							
 							<h3> what is Embodied AI and Robotic for future scientifc discovery ?</h3>
@@ -331,11 +362,11 @@ var x = setInterval(function() {
 									
 				    				<div class='info-list'>
 									<br> 
-									Postdoctoral Researcher 
+									Researcher 
 									<br>
-									Stanford University, United States 
+									University of Toronto, Canada 
 									<br>
-									<a href="https:///" target="_blank">Personal website</a>  
+									<a href="https://universea.github.io/" target="_blank">Personal website</a>  
 									<br>	
 									</div>
 									<p class='talk-list'>
@@ -351,12 +382,12 @@ var x = setInterval(function() {
 
 					<!-- org -->
 					<section id="org" class="wrapper style3 spotlights">
-						<div class="inner">
+						<!-- <div class="inner"> -->
 							<h2>Organizers</h2>
 							<div class="organizer-list">
 								<div class="organizer">
 									<img src="images/pengsong_zhang.jpg" alt="Pengsong Zhang" class="circle-img">
-									<p><strong>Pengsong Zhang (PhD)</strong></p>
+									<p><strong> <a href="https://universea.github.io/" target="_blank"> Pengsong Zhang</strong></a></p>
 									<p>University of Toronto</p>
 									<p>AI, Robotics</p>
 								</div>
@@ -409,7 +440,7 @@ var x = setInterval(function() {
 									<p>Robotics</p>
 								</div>
 							</div>
-						</div>
+						<!-- </div> -->
 					</section>
 					
 					<style>
@@ -466,9 +497,9 @@ var x = setInterval(function() {
 
 
 					<!-- collaberations -->
-					<section id="collab" class="wrapper style4 fade-up">
+					<section id="sponsors" class="wrapper style4 fade-up">
 						<div class="inner">
-							<h2>Links</h2>
+							<h2>sponsors</h2>
 							<ul>
 							<li>
 							  <b>Conference website:</b> Link to the conference website <a href="https:">https:</a>

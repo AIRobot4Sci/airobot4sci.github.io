@@ -182,9 +182,16 @@ input, select, textarea {
 			text-decoration: none;
 		}
 
-	h1 {
-		font-size: 2.75em;
-	}
+		h1 {
+			font-family: 'Lora', serif;
+			font-weight: 700;
+			font-size: 5rem;
+			color: #ff7f50;
+			text-align: center;
+			line-height: 1.2;
+			margin-bottom: 20px;
+			text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+		}
 
 		h1.major {
 			margin: 0 0 1.3em 0;
