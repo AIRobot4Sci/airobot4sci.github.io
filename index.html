@@ -75,7 +75,7 @@ var x = setInterval(function() {
 			/* Background image with transparency */
 			#intro {
 				position: relative;
-				background: url('images/bg.png') no-repeat center center/cover;
+				background: url('images/bg1.png') no-repeat center center/cover;
 				background-color: rgba(0, 0, 0, 0.6); /* Enhanced background for better text readability */
 				background-blend-mode: overlay;
 				color: white;
@@ -127,6 +127,14 @@ var x = setInterval(function() {
 				max-width: 1800px; 
 				background-color: rgba(173, 198, 197, 0.678);
 			}
+			#contact .inner {
+				display: block;
+				text-align: center;
+			}
+			#footer .inner {
+				display: block;
+				text-align: center;
+			}
 		</style>
 	</head>
 	<body class="is-preload">
@@ -156,7 +164,7 @@ var x = setInterval(function() {
 				<!-- Intro -->
 					<section id="intro" class="wrapper style1 fullscreen fade-up">
 						<div class="inner">
-							<h3>The 1st Workshop @ <a href="http://iros25.org/" target="_blank">IROS</a> on
+							<h3>The 1st Workshop @ <a href="http://iros25.org/" target="_blank">IROS</a> on</h3>
 							<h1>Embodied AI and Robotics for Future Scientific Discovery</h1> 
 							<div style="background-color: #29a3c5; color: white; padding: 16px; border-radius: 8px; text-align: center; margin-bottom: 20px;">
 								<h3 style="margin: 0;">
@@ -340,40 +348,40 @@ var x = setInterval(function() {
 									<td>Speaker TBA</td>
 								</tr>
 								<tr>
-									<td>09:35 - 09:50</td>
-									<td>Invited Talk 6</td>
-									<td>Speaker TBA</td>
-								</tr>
-								<tr>
-									<td>09:50 - 10:00</td>
-									<td>Invited Talk 7</td>
-									<td>Speaker TBA</td>
-								</tr>
-								<tr>
-									<td>10:00 - 10:15</td>
-									<td>Invited Talk 8</td>
-									<td>Speaker TBA</td>
-								</tr>
-								<tr>
-									<td>10:30 - 10:24</td>
-									<td> poster sesstion</td>
-									<td>Open discussion</td>
-								</tr>
-								<tr>
-									<td>10:45 - 11:25</td>
-									<td>Panel discussion</td>
-									<td>experts from diverse backgrounds</td>
-								</tr>
-								<tr>
-									<td>11:25 - 11:55</td>
-									<td>selected paper presentations</td>
-									<td>3 pre (8 + 2 min)</td>
-								</tr>
-								<tr>
-									<td>11:55 - 12:00</td>
-									<td>clossing remarks</td>
-									<td> summary and next steps </td>
-								</tr>
+<td>09:35 - 09:50</td>
+<td>Invited Talk 6</td>
+<td>Speaker TBA</td>
+</tr>
+<tr>
+<td>09:50 - 10:00</td>
+<td>Invited Talk 7</td>
+<td>Speaker TBA</td>
+</tr>
+<tr>
+<td>10:00 - 10:15</td>
+<td>Invited Talk 8</td>
+<td>Speaker TBA</td>
+</tr>
+<tr>
+<td>10:30 - 10:24</td>
+<td> poster sesstion</td>
+<td>Open discussion</td>
+</tr>
+<tr>
+<td>10:45 - 11:25</td>
+<td>Panel discussion</td>
+<td>experts from diverse backgrounds</td>
+</tr>
+<tr>
+<td>11:25 - 11:55</td>
+<td>selected paper presentations</td>
+<td>3 pre (8 + 2 min)</td>
+</tr>
+<tr>
+<td>11:55 - 12:00</td>
+<td>clossing remarks</td>
+<td> summary and next steps </td>
+</tr>
 							</table>
 						</div>
 					</section>
@@ -387,7 +395,7 @@ var x = setInterval(function() {
 							<li>AI Scientists and Robot Scientists</li>
 							<li>Al for Science: Nature, Formal, Social, Applied, Interdisciplinary Science</li>
 							<li>AI automates regearch: literature review, idea proposal coding, analysis, etc.</li>
-							<li>Embodied AI and robotic manipulatior enhancing laboratory automation</li>
+							<li>Embodied AI and robotic manipulation enhancing laboratory automation</li>
 							<li>SOTA algorithms for each scientific research stage</li>
 							<li>Foundation models for Science, robotic manipulation</li>
 							<li>Dataset, Evaluation or Benchmark</li>
@@ -756,11 +764,11 @@ var x = setInterval(function() {
 					<!-- collaberations -->
 					<section id="sponsors" class="wrapper style4 fade-up">
 						<div class="inner">
-							<h2>Sponsors</h2>
+							<h2 style="text-align: center;">Sponsors</h2>
 							<br>
 							<br>
-							<div class="image-row"></div>
-								<div style="display: flex; flex-direction: row; gap: 10px; align-items: center;">
+							<div style="text-align: center; width: 100%;">
+								<div style="display: flex; flex-direction: row; gap: 10px; align-items: center; justify-content: center;">
 									<img src="images/duliang-logo.png" alt="Sponsor 1" class="full-size-img">
 									<figure style="text-align: center;">
 										<img src="images/sponser2.png" alt="Sponsor 2" class="full-size-img">
@@ -781,19 +789,16 @@ var x = setInterval(function() {
 					<!-- contact -->
 					<section id="contact" class="wrapper style5 fade-up">
 						<div class="inner">
-							<h2>Contact</h2>
-							
-							
+							<h2 style="text-align: center;">Contact</h2>
+							<br>
+							<div style="text-align: center; width: 100%;">
 							<p style="text-align: center; white-space: normal;">If you have any questions please contact:
 							<br>
 								 pengsong.zhang AT mail.utoronto.ca 
 								 <br>
 						
 								 or:  heng.zhang AT iit DOT it</p>
-							
-							
-										
-								</div>
+							</div>
 						</div>
 					</section>
 
@@ -805,11 +810,13 @@ var x = setInterval(function() {
 		<!-- Footer -->
 			<footer id="footer" class="wrapper style1-alt">
 				<div class="inner">
+					<div style="text-align: center; width: 100%;">
 					Participants are required to abide by the <a href="https://www.ieee-ras.org/about-ras/diversity-page/ieee-ras-code-of-conduct" target="_blank">IEEE RAS Code of Conduct</a>
-				<ul class="copyright">
+					<ul class="copyright" style="margin-top: 10px; padding: 0; list-style: none;">
 						<li> &copy; All rights reserved </li>
 						<!-- <li>Design: <a href="http://html5up.net">HTML5 UP</a></li> -->
 					</ul>
+					</div>
 				</div>
 				<br>
 
