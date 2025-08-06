@@ -22,14 +22,19 @@ var x = setInterval(function() {
   var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-  // Display the result in the element with id="demo"
-  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
-  + minutes + "m " + seconds + "s ";
+  // Display the result in the element with id="demo" if it exists
+  var demoElement = document.getElementById("demo");
+  if (demoElement) {
+    demoElement.innerHTML = days + "d " + hours + "h "
+    + minutes + "m " + seconds + "s ";
+  }
 
   // If the count down is finished, write some text
   if (distance < 0) {
     clearInterval(x);
-    document.getElementById("demo").innerHTML = "EXPIRED";
+    if (demoElement) {
+      demoElement.innerHTML = "EXPIRED";
+    }
   }
 }, 1000);
 </script>
@@ -55,20 +60,20 @@ var x = setInterval(function() {
 			}
 
 			#schedule_tab td, #schedule_tab th {
-			  border: 2px solid #ddd;
+			  border: 2px solid var(--table-border);
 			  padding: 14px;
-			  color: white;
+			  color: var(--heading-color);
 			}
 
-			#schedule_tab tr:nth-child(even){background-color: #9fabbd;}
+			#schedule_tab tr:nth-child(even){background-color: var(--table-row-even);}
 			
-			#schedule_tab tr:hover {background-color: #a9bedf;}
+			#schedule_tab tr:hover {background-color: var(--table-row-hover);}
 
 			#schedule_tab th {
 			  padding-top: 12px;
 			  padding-bottom: 12px;
 			  text-align: left;
-			  background-color: #29a3c5;
+			  background-color: var(--table-header-bg);
 			  color: white;
 			}
 
@@ -83,7 +88,7 @@ var x = setInterval(function() {
 			}
 
 			#intro .inner {
-				background-color: rgba(60, 134, 131, 0.623); /* Slightly darker background for text */
+				background-color: var(--intro-overlay); /* Slightly darker background for text */
 				padding: 2em;
 				border-radius: 10px;
 			}
@@ -125,7 +130,7 @@ var x = setInterval(function() {
 				justify-content: center; /* Center children vertically */
 				text-align: justify; /* Justify text content */
 				max-width: 1800px; 
-				background-color: rgba(173, 198, 197, 0.678);
+				background-color: var(--white-inner-bg);
 			}
 			#contact .inner {
 				display: block;
@@ -134,6 +139,36 @@ var x = setInterval(function() {
 			#footer .inner {
 				display: block;
 				text-align: center;
+			}
+
+			/* Theme Toggle Styles */
+			.theme-toggle {
+				margin-top: 2em;
+				text-align: center;
+			}
+
+			#theme-toggle {
+				background: var(--accent-color);
+				border: none;
+				border-radius: 50%;
+				width: 50px;
+				height: 50px;
+				cursor: pointer;
+				transition: all 0.3s ease;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font-size: 1.5em;
+				box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+			}
+
+			#theme-toggle:hover {
+				transform: scale(1.1);
+				box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+			}
+
+			.theme-icon {
+				transition: transform 0.3s ease;
 			}
 		</style>
 	</head>
@@ -155,6 +190,12 @@ var x = setInterval(function() {
 							<li><a href="#contact">Contact</a></li>
 						</ul>
 					</nav>
+					<!-- Theme Toggle -->
+					<div class="theme-toggle">
+						<button id="theme-toggle" aria-label="Toggle light/dark mode">
+							<span class="theme-icon">🌙</span>
+						</button>
+					</div>
 				</div>
 			</section>
 
@@ -830,6 +871,38 @@ var x = setInterval(function() {
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+
+			<!-- Theme Toggle Script -->
+			<script>
+				// Theme toggle functionality
+				const themeToggle = document.getElementById('theme-toggle');
+				const themeIcon = document.querySelector('.theme-icon');
+				const root = document.documentElement;
+
+				// Check for saved theme preference or default to 'dark' theme
+				const currentTheme = localStorage.getItem('theme') || 'dark';
+				if (currentTheme === 'light') {
+					root.classList.add('light-theme');
+					themeIcon.textContent = '☀️';
+				} else {
+					themeIcon.textContent = '🌙';
+				}
+
+				// Theme toggle event listener
+				themeToggle.addEventListener('click', function() {
+					if (root.classList.contains('light-theme')) {
+						// Switch to dark theme
+						root.classList.remove('light-theme');
+						themeIcon.textContent = '🌙';
+						localStorage.setItem('theme', 'dark');
+					} else {
+						// Switch to light theme
+						root.classList.add('light-theme');
+						themeIcon.textContent = '☀️';
+						localStorage.setItem('theme', 'light');
+					}
+				});
+			</script>
 
 	</body>
 </html>

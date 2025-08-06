@@ -1,6 +1,39 @@
 /* TODO: change BG color : background-color*/
 @import url(fontawesome-all.min.css);
 
+/* Theme Variables */
+:root {
+	/* Dark theme (default) */
+	--bg-color: #312450;
+	--text-color: rgba(255, 255, 255, 0.55);
+	--heading-color: #ffffff;
+	--accent-color: #ff7f50;
+	--link-border: rgba(255, 255, 255, 0.7);
+	--link-hover: #ffffff;
+	--table-header-bg: #29a3c5;
+	--table-row-even: #9fabbd;
+	--table-row-hover: #a9bedf;
+	--table-border: #ddd;
+	--intro-overlay: rgba(60, 134, 131, 0.623);
+	--white-inner-bg: rgba(173, 198, 197, 0.678);
+}
+
+/* Light theme */
+:root.light-theme {
+	--bg-color: #f8f9fa;
+	--text-color: rgba(33, 37, 41, 0.8);
+	--heading-color: #212529;
+	--accent-color: #dc3545;
+	--link-border: rgba(33, 37, 41, 0.5);
+	--link-hover: #495057;
+	--table-header-bg: #007bff;
+	--table-row-even: #e9ecef;
+	--table-row-hover: #dee2e6;
+	--table-border: #6c757d;
+	--intro-overlay: rgba(255, 255, 255, 0.9);
+	--white-inner-bg: rgba(248, 249, 250, 0.95);
+}
+
 
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
@@ -94,7 +127,7 @@ input, select, textarea {
 	}
 
 	body {
-		background: #312450;
+		background: var(--bg-color);
 	}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
@@ -111,7 +144,7 @@ input, select, textarea {
 /* Type */
 
 	body, input, select, textarea {
-		color: rgba(255, 255, 255, 0.55);
+		color: var(--text-color);
 		font-family: Arial, Helvetica, sans-serif;
 		font-size: 16.5pt;
 		font-weight: normal;
@@ -147,18 +180,18 @@ input, select, textarea {
 		-webkit-transition: color 0.2s ease, border-bottom-color 0.2s ease;
 		-ms-transition: color 0.2s ease, border-bottom-color 0.2s ease;
 		transition: color 0.2s ease, border-bottom-color 0.2s ease;
-		border-bottom: dotted 1.5px rgba(255, 255, 255, 0.7);
+		border-bottom: dotted 1.5px var(--link-border);
 		color: inherit;
 		text-decoration: none;
 	}
 
 		a:hover {
 			border-bottom-color: transparent;
-			color: #ffffff;
+			color: var(--link-hover);
 		}
 
 	strong, b {
-		color: #ffffff;
+		color: var(--heading-color);
 		font-weight: bold;
 	}
 
@@ -171,7 +204,7 @@ input, select, textarea {
 	}
 
 	h1, h2, h3, h4, h5, h6 {
-		color: #ffffff;
+		color: var(--heading-color);
 		font-weight: bold;
 		line-height: 1.5;
 		margin: 0 0 0.5em 0;
@@ -186,7 +219,7 @@ input, select, textarea {
 			font-family: 'Lora', serif;
 			font-weight: 700;
 			font-size: 5rem;
-			color: #ff7f50;
+			color: var(--accent-color);
 			text-align: center;
 			line-height: 1.2;
 			margin-bottom: 20px;
