@@ -35,57 +35,159 @@ var x = setInterval(function() {
 </script>
 
 
-<html>
-	<head>
+<html>	<head>
 		<title>Workshop IROS 2025</title>
-		<link href="https://fonts.googleapis.com/css2?family=Lora:wght@700&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-		<!-- table style-->
-		<style>
-			a{
-				color: white; 
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>		<!-- table style-->		<style>			/* 统一冷色系配色体系 */
+			:root {
+				--primary-blue: #4A90E2;
+				--soft-purple: #8B7EC8;
+				--ice-blue: #E3F2FD;
+				--steel-blue: #90CAF9;
+				--cool-gray: #F5F7FA;
+				--medium-gray: #E1E8ED;
+				--text-dark: #2C3E50;
+				--text-light: #546E7A;
+				--pure-white: #FFFFFF;
+				--subtle-shadow: rgba(0, 0, 0, 0.08);
 			}
-			#schedule_tab {
-			  font-family: Arial, Helvetica, sans-serif;
-			  border-collapse: collapse;
+
+			/* 全局扁平化风格 */
+			* {
+				box-sizing: border-box;
+			}
+
+			body {
+				font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+				line-height: 1.6;
+				color: var(--text-dark);
+			}
+
+			/* 美化滚动条 */
+			::-webkit-scrollbar {
+				width: 8px;
+			}			::-webkit-scrollbar-track {
+				background: var(--cool-gray);
+			}
+
+			::-webkit-scrollbar-thumb {
+				background: linear-gradient(135deg, var(--primary-blue), var(--soft-purple));
+				border-radius: 10px;
+			}
+
+			::-webkit-scrollbar-thumb:hover {
+				background: linear-gradient(135deg, var(--soft-purple), var(--primary-blue));
+			}
+
+			a{
+				color: var(--primary-blue);
+				text-decoration: none;
+				transition: all 0.3s ease;
+			}
+
+			a:hover {
+				color: var(--soft-purple);
+				text-decoration: underline;
+			}			/* 标题样式优化 - 确保清晰可读 */
+			h1, h2, h3, h4, h5, h6 {
+				color: var(--text-dark);
+				font-weight: 700;
+				line-height: 1.2;
+			}
+
+			h1 {
+				color: var(--text-dark);
+				font-size: 3rem;
+				text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+			}
+
+			h2 {
+				color: var(--text-dark);
+				position: relative;
+				padding-bottom: 1rem;
+			}
+
+			h2::after {
+				content: '';
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: 60px;
+				height: 4px;
+				background: linear-gradient(135deg, var(--primary-blue), var(--soft-purple));
+				border-radius: 2px;
+			}#schedule_tab {
+			  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+			  border-collapse: separate;
+			  border-spacing: 0;
 			  width: 100%;
+			  border-radius: 16px;
+			  overflow: hidden;
+			  background: var(--pure-white);
+			  box-shadow: 0 8px 32px var(--subtle-shadow);
+			  border: 1px solid var(--medium-gray);
 			}
 
 			#schedule_tab td, #schedule_tab th {
-			  border: 2px solid #ddd;
-			  padding: 14px;
-			  color: white;
+			  border: none;
+			  border-bottom: 1px solid var(--medium-gray);
+			  padding: 20px 24px;
+			  color: var(--text-dark);
+			  font-weight: 500;
+			  transition: all 0.3s ease;
+			}			#schedule_tab tr:nth-child(even) {
+				background: var(--ice-blue);
 			}
-
-			#schedule_tab tr:nth-child(even){background-color: #9fabbd;}
 			
-			#schedule_tab tr:hover {background-color: #a9bedf;}
+			#schedule_tab tr:hover {
+				background: linear-gradient(135deg, var(--primary-blue) 0%, var(--soft-purple) 100%);
+				color: var(--pure-white);
+				transform: translateY(-2px);
+				box-shadow: 0 12px 24px rgba(74, 144, 226, 0.15);
+			}
 
 			#schedule_tab th {
-			  padding-top: 12px;
-			  padding-bottom: 12px;
+			  padding: 24px;
 			  text-align: left;
-			  background-color: #29a3c5;
-			  color: white;
-			}
-
-			/* Background image with transparency */
+			  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--soft-purple) 100%);
+			  color: var(--pure-white);
+			  font-weight: 700;
+			  font-size: 0.9rem;
+			  letter-spacing: 0.5px;
+			  text-transform: uppercase;
+			  border-bottom: none;
+			}/* 扁平化优雅背景 */
 			#intro {
 				position: relative;
-				background: url('images/bg1.png') no-repeat center center/cover;
-				background-color: rgba(0, 0, 0, 0.6); /* Enhanced background for better text readability */
-				background-blend-mode: overlay;
+				background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 				color: white;
-				padding: 2em;
+				padding: 4em 2em;
+				overflow: hidden;
+			}
+
+			#intro::before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				background: 
+					radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+					radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.08) 0%, transparent 50%);
+				pointer-events: none;
 			}
 
 			#intro .inner {
-				background-color: rgba(60, 134, 131, 0.623); /* Slightly darker background for text */
-				padding: 2em;
-				border-radius: 10px;
+				position: relative;
+				background: rgba(255, 255, 255, 0.1);
+				backdrop-filter: blur(10px);
+				padding: 3em;
+				border-radius: 16px;
+				border: 1px solid rgba(255, 255, 255, 0.2);
 			}
 
 			.image-row {
@@ -113,21 +215,44 @@ var x = setInterval(function() {
 				justify-content: center; /* Center children vertically */
 				text-align: justify; /* Justify text content */
 				max-width: 800px; /* Optional: Limit the width for better readability */
-			}
-			.white_inner {
-				width: auto; /* Width adjusts to content */
-				height: auto; /* Height adjusts to content */
-				padding: 20px; /* Optional: Add padding for spacing */
-				margin: 0 auto; /* Optional: Center the container horizontally */
-				display: flex; /* Use Flexbox for flexible layout */
+			}			.white_inner {
+				width: auto;
+				height: auto;
+				padding: 4rem;
+				margin: 3rem auto;
+				display: flex;
 				flex-direction: column; 
-				align-items: center; /* Center children horizontally */
-				justify-content: center; /* Center children vertically */
-				text-align: justify; /* Justify text content */
-				max-width: 1800px; 
-				background-color: rgba(173, 198, 197, 0.678);
+				align-items: center;
+				justify-content: center;
+				text-align: center;
+				max-width: 1400px; 
+				background: linear-gradient(145deg, rgba(248, 250, 252, 0.98), rgba(241, 245, 249, 0.95));
+				backdrop-filter: blur(20px) saturate(150%);
+				-webkit-backdrop-filter: blur(20px) saturate(150%);
+				border-radius: 20px;
+				border: 2px solid rgba(226, 232, 240, 0.6);
+				color: var(--text-dark);
+				box-shadow: 
+					0 20px 40px -12px var(--subtle-shadow),
+					0 8px 16px -4px rgba(148, 163, 184, 0.1),
+					0 0 0 1px rgba(255, 255, 255, 0.9) inset;
+				position: relative;
+				overflow: hidden;
 			}
-			#contact .inner {
+
+			.white_inner::before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				background: 
+					radial-gradient(circle at 20% 80%, rgba(74, 144, 226, 0.06) 0%, transparent 60%),
+					radial-gradient(circle at 80% 20%, rgba(139, 126, 200, 0.04) 0%, transparent 60%);
+				pointer-events: none;
+				z-index: -1;
+			}			#contact .inner {
 				display: block;
 				text-align: center;
 			}
@@ -135,10 +260,89 @@ var x = setInterval(function() {
 				display: block;
 				text-align: center;
 			}
+
+			/* 列表样式美化 */
+			ul li {
+				margin: 0.8rem 0;
+				padding-left: 1.5rem;
+				position: relative;
+				color: var(--text-dark);
+			}
+
+			ul li::before {
+				content: '▪';
+				position: absolute;
+				left: 0;
+				color: var(--primary-blue);
+				font-weight: bold;
+				font-size: 1.2em;
+			}
+
+			/* 嵌套列表样式 */
+			ul li ul li::before {
+				content: '◦';
+				color: var(--soft-purple);
+			}
+
+			/* 按钮和交互元素样式 */
+			.btn {
+				background: linear-gradient(135deg, var(--primary-blue), var(--soft-purple));
+				color: var(--pure-white);
+				border: none;
+				padding: 1rem 2rem;
+				border-radius: 12px;
+				font-weight: 600;
+				text-transform: uppercase;
+				letter-spacing: 0.5px;
+				cursor: pointer;
+				transition: all 0.3s ease;
+				box-shadow: 0 4px 15px rgba(74, 144, 226, 0.3);
+			}			.btn:hover {
+				transform: translateY(-2px);
+				box-shadow: 0 8px 25px rgba(74, 144, 226, 0.4);
+			}
+
+			/* 卡片容器优化 */
+			.content-card {
+				background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(248, 250, 252, 0.9));
+				backdrop-filter: blur(10px);
+				border-radius: 16px;
+				border: 1px solid rgba(226, 232, 240, 0.6);
+				box-shadow: 0 4px 16px var(--subtle-shadow);
+				transition: all 0.3s ease;
+			}
+
+			.content-card:hover {
+				transform: translateY(-2px);
+				box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+			}			/* PDF链接样式优化 - 冷色系 */
+			a[href$=".pdf"] {
+				color: var(--primary-blue);
+				font-weight: 600;
+				padding: 0.25rem 0.5rem;
+				border-radius: 6px;
+				background: linear-gradient(135deg, rgba(74, 144, 226, 0.1), rgba(139, 126, 200, 0.05));
+				transition: all 0.3s ease;
+			}
+
+			a[href$=".pdf"]:hover {
+				background: linear-gradient(135deg, rgba(74, 144, 226, 0.2), rgba(139, 126, 200, 0.1));
+				transform: translateY(-1px);
+				box-shadow: 0 2px 8px rgba(74, 144, 226, 0.3);
+			}
+
+			/* 分隔线样式 */
+			hr {
+				border: none;
+				height: 2px;
+				background: linear-gradient(135deg, var(--primary-blue), var(--soft-purple));
+				border-radius: 1px;
+				margin: 2rem 0;
+				opacity: 0.6;
+			}
 		</style>
 	</head>
 	<body class="is-preload">
-
 		<!-- Sidebar -->
 			<section id="sidebar">
 				<div class="inner">
@@ -155,6 +359,11 @@ var x = setInterval(function() {
 							<li><a href="#contact">Contact</a></li>
 						</ul>
 					</nav>
+					
+					<div class="sidebar-footer">
+						<div class="date-info">October 24, 2025</div>
+						<div class="location-info">PressRoom A<br>8:00 AM - 12:00 PM</div>
+					</div>
 				</div>
 			</section>
 
@@ -162,24 +371,32 @@ var x = setInterval(function() {
 			<div id="wrapper">
 
 				<!-- Intro -->
-					<section id="intro" class="wrapper style1 fullscreen fade-up">
-						<div class="inner">
+					<section id="intro" class="wrapper style1 fullscreen fade-up">						<div class="inner">
 							<h3>The 1st Workshop @ <a href="http://iros25.org/" target="_blank">IROS</a> on</h3>
-							<h1>Embodied AI and Robotics for Future Scientific Discovery</h1> 
-							<div style="background-color: #29a3c5; color: white; padding: 16px; border-radius: 8px; text-align: center; margin-bottom: 20px;">
-								<h3 style="margin: 0;">
-									<span style="background-color: #ffcc00; color: #222; padding: 4px 10px; border-radius: 6px; font-weight: bold;">
-										October 24
-									</span>
-									, 2025  · 
-									<span style="background-color: #ffcc00; color: #222; padding: 4px 10px; border-radius: 6px; font-weight: bold;">
-										8:00 AM to 12:00 PM
-									</span>
-									(GMT+8) in
-									<span style="background-color: #ffcc00; color: #222; padding: 4px 10px; border-radius: 6px; font-weight: bold;">
-										PressRoom A
-									</span> 
-								</h3>
+							<h1>Embodied AI and Robotics for Future Scientific Discovery</h1>
+							
+							<div class="workshop-details">
+								<div class="detail-item">
+									<div class="detail-icon">📅</div>
+									<div class="detail-content">
+										<h4>Date</h4>
+										<p>October 24, 2025</p>
+									</div>
+								</div>
+								<div class="detail-item">
+									<div class="detail-icon">🕐</div>
+									<div class="detail-content">
+										<h4>Time</h4>
+										<p>8:00 AM - 12:00 PM (GMT+8)</p>
+									</div>
+								</div>
+								<div class="detail-item">
+									<div class="detail-icon">📍</div>
+									<div class="detail-content">
+										<h4>Location</h4>
+										<p>PressRoom A</p>
+									</div>
+								</div>
 							</div>
 
 							<br>
@@ -191,9 +408,8 @@ var x = setInterval(function() {
 								Recent advances in embodied AI and robotics present unprecedented opportunities to evolve from purely virtual AI scientists to embodied robotic researchers that can actively engage in a complete research lifecycle. This workshop brings together experts from robotics, AI, and various scientific domains to discuss the development of systems that can autonomously perform the scientific research lifecycle, literature reviews, generate hypotheses, conduct <strong>physical experiments</strong>, and synthesize findings into scholarly manuscripts.
 								
 								
-							</p>
-							<div class="white_inner">
-							<h2>Organizers</h2>
+							</p>							<div class="white_inner">
+							<h2 style="color: #1f2937;">Organizers</h2>
 								<div class="image-row">
 									<img src="images/university-of-toronto-vector-logo.png" alt="UoT" class="full-size-img">
 									<img src="images/iit.png" alt="iit" class="full-size-img">
@@ -440,39 +656,36 @@ var x = setInterval(function() {
 							<h2>Invited Speakers </h2>
 							<br>_______________________________________________________________________________________________<br>
 							<br>
-							
-							<div class="row">
-								<div class="column">
+									<div class="row">
+								<div class="speaker">
 									<img src="images/xingxing.jpg" alt="xingxing" class="img-list">
-								</div>
-								<div class="column">
-									<h3 class="name-list"><b><a href="https://en.wikipedia.org/wiki/Wang_Xingxing" target="_blank">Wang Xingxing</a></b></h3>
-									<div class="info-list">
-										<br>
-										Founder and CEO of robotics company <a href="https://www.unitree.com/">Unitree</a><br>
-										Hangzhou, China
+									<div class="speaker-info">
+										<h3 class="name-list"><b><a href="https://en.wikipedia.org/wiki/Wang_Xingxing" target="_blank">Wang Xingxing</a></b></h3>
+										<div class="info-list">
+											<br>
+											Founder and CEO of robotics company <a href="https://www.unitree.com/">Unitree</a><br>
+											Hangzhou, China
+										</div>
+										<p class="talk-list">
+											<b>Talk title:</b> What can robots unlock for the future of scientific discovery? <br>
+										</p>
 									</div>
-									<p class="talk-list">
-										<b>Talk title:</b> What can robots unlock for the future of scientific discovery? <br>
-									</p>
 								</div>
 							</div>
-							<hr style="width:80%;text-align:left;margin-left:5">
-
-							<div class="row">
-								<div class="column">
+							<hr style="width:80%;text-align:left;margin-left:5">							<div class="row">
+								<div class="speaker">
 									<img src="images/huazhe_xu.png" alt="huazhe" class="img-list">
-								</div>
-								<div class="column">
-									<h3 class="name-list"><b><a href="http://hxu.rocks" target="_blank">Huazhe Xu</a></b></h3>
-									<div class="info-list">
-										<br>
-										Assistant Professor<br>
-										Tsinghua University, China
+									<div class="speaker-info">
+										<h3 class="name-list"><b><a href="http://hxu.rocks" target="_blank">Huazhe Xu</a></b></h3>
+										<div class="info-list">
+											<br>
+											Assistant Professor<br>
+											Tsinghua University, China
+										</div>
+										<p class="talk-list">
+											<b>Talk title:</b> TBD, we will update it soon once it is decided. <br>
+										</p>
 									</div>
-									<p class="talk-list">
-										<b>Talk title:</b>TBD , we will update it soon once it is decided. <br>
-									</p>
 								</div>
 							</div>
 							<hr style="width:80%;text-align:left;margin-left:5">
@@ -613,33 +826,78 @@ var x = setInterval(function() {
 
 
 						
-					</section>
-
-					<style>
+					</section>					<style>
 					.speaker {
 						display: flex;
-						align-items: center;
-						width: 80%;
-						margin-bottom: 20px;
+						align-items: flex-start;
+						width: 100%;
+						margin-bottom: 3rem;
 						flex-wrap: wrap;
+						background: linear-gradient(145deg, rgba(248, 250, 252, 0.98), rgba(255, 255, 255, 0.95));
+						backdrop-filter: blur(10px);
+						padding: 2rem;
+						border-radius: 20px;
+						border: 2px solid rgba(226, 232, 240, 0.6);
+						box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+						transition: all 0.3s ease;
 					}
+					
+					.speaker:hover {
+						transform: translateY(-4px);
+						box-shadow: 0 16px 40px rgba(74, 144, 226, 0.15);
+						border-color: rgba(74, 144, 226, 0.3);
+					}
+					
 					.img-list {
-						width: 180px;
-						height: 180px;
-						border-radius: 50%;
+						width: 200px;
+						height: 200px;
+						border-radius: 20px;
 						object-fit: cover;
-						border: 2px solid #ddd;
-						margin-right: 20px;
+						border: 3px solid rgba(74, 144, 226, 0.2);
+						margin-right: 2rem;
+						flex-shrink: 0;
+						transition: all 0.3s ease;
 					}
+					
+					.speaker:hover .img-list {
+						border-color: rgba(74, 144, 226, 0.5);
+						box-shadow: 0 8px 24px rgba(74, 144, 226, 0.2);
+					}
+					
 					.speaker-info {
 						text-align: left;
 						flex: 1;
-						white-space: nowrap;
+						color: #2C3E50;
 					}
-					.speaker-info p, .speaker-info a {
-						white-space: nowrap;
-						overflow: hidden;
-						text-overflow: ellipsis;
+					
+					.speaker-info h3.name-list {
+						color: #2C3E50;
+						margin-bottom: 0.5rem;
+						font-size: 1.5rem;
+						font-weight: 700;
+					}
+					
+					.speaker-info .info-list {
+						color: #6C757D;
+						margin-bottom: 1rem;
+						font-size: 1rem;
+					}
+					
+					.speaker-info .talk-list {
+						color: #2C3E50;
+						font-size: 1rem;
+						line-height: 1.6;
+					}
+					
+					.speaker-info a {
+						color: #4A90E2;
+						text-decoration: none;
+						transition: all 0.3s ease;
+					}
+					
+					.speaker-info a:hover {
+						color: #8B7EC8;
+						text-decoration: underline;
 					}
 					</style>
 
@@ -706,37 +964,61 @@ var x = setInterval(function() {
 								</div>
 							</div>
 						<!-- </div> -->
-					</section>
-					
-					<style>
+					</section>							<style>
 					.organizer-list {
 						display: grid;
-						grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-						gap: 30px;
+						grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+						gap: 2rem;
 						justify-content: center;
-						padding: 20px;
+						padding: 2rem;
 					}
 					.organizer {
 						text-align: center;
-						padding: 15px;
+						padding: 2rem;
+						background: linear-gradient(145deg, rgba(248, 250, 252, 0.95), rgba(255, 255, 255, 0.9));
+						border-radius: 20px;
+						border: 2px solid rgba(226, 232, 240, 0.6);
+						box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+						transition: all 0.3s ease;
+					}
+					.organizer:hover {
+						transform: translateY(-6px);
+						box-shadow: 0 16px 40px rgba(74, 144, 226, 0.15);
+						border-color: rgba(74, 144, 226, 0.3);
 					}
 					.circle-img {
 						width: 180px;
 						height: 180px;
 						border-radius: 50%;
 						object-fit: cover;
-						border: 2px solid #ddd;
-						margin-bottom: 10px;
+						border: 4px solid rgba(74, 144, 226, 0.2);
+						margin-bottom: 1rem;
+						transition: all 0.3s ease;
 					}
-					/* Reducing vertical space between each line */
+					.organizer:hover .circle-img {
+						border-color: rgba(74, 144, 226, 0.6);
+						box-shadow: 0 8px 24px rgba(74, 144, 226, 0.2);
+					}
 					.organizer p {
-						margin: 2px 0; /* Reduce space between paragraphs */
-						line-height: 1.1; /* Tighter line height for text */
+						margin: 0.5rem 0;
+						line-height: 1.4;
+						color: #2C3E50;
 					}
-
 					.organizer p strong {
-						display: block; /* Make the name bold and on its own line */
-						margin-bottom: 3px; /* A small space below the name */
+						display: block;
+						margin-bottom: 0.5rem;
+						color: #2C3E50;
+						font-weight: 600;
+					}
+					.organizer p strong a {
+						color: #4A90E2;
+						text-decoration: none;
+						font-weight: 600;
+						transition: all 0.3s ease;
+					}
+					.organizer p strong a:hover {
+						color: #8B7EC8;
+						text-decoration: underline;
 					}
 
 					.image-row {
@@ -821,7 +1103,6 @@ var x = setInterval(function() {
 				<br>
 
 			</footer>
-
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrollex.min.js"></script>
@@ -830,6 +1111,46 @@ var x = setInterval(function() {
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			
+			<!-- Enhanced Navigation Script -->
+			<script>
+				$(document).ready(function() {
+					// Enhanced navigation active state handling
+					$('#sidebar nav a').click(function() {
+						$('#sidebar nav a').removeClass('active');
+						$(this).addClass('active');
+						$(this).parent().addClass('active');
+					});
+					
+					// Scroll-based navigation highlighting
+					$(window).scroll(function() {
+						var scrollDistance = $(window).scrollTop();
+						
+						$('section[id]').each(function() {
+							var sectionId = $(this).attr('id');
+							var sectionTop = $(this).offset().top - 100;
+							var sectionBottom = sectionTop + $(this).outerHeight();
+							
+							if (scrollDistance >= sectionTop && scrollDistance < sectionBottom) {
+								$('#sidebar nav a').removeClass('active');
+								$('#sidebar nav li').removeClass('active');
+								$('#sidebar nav a[href="#' + sectionId + '"]').addClass('active');
+								$('#sidebar nav a[href="#' + sectionId + '"]').parent().addClass('active');
+							}
+						});
+					});
+					
+					// Smooth scrolling enhancement
+					$('#sidebar nav a[href^="#"]').click(function() {
+						var target = $(this.hash);
+						if (target.length) {
+							$('html, body').animate({
+								scrollTop: target.offset().top - 50
+							}, 800, 'easeInOutQuad');
+						}
+					});
+				});
+			</script>
 
 	</body>
 </html>
