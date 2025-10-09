@@ -687,6 +687,37 @@ var x = setInterval(function() {
 								</div>
 							</div>
 							<hr style="width:80%;text-align:left;margin-left:5">
+							
+							<div class="speaker joint-speaker">
+								<div class="joint-speaker-row">
+									<div class="joint-speaker-item">
+										<img src="images/pulkit.jpg" alt="Pulkit Agrawal" class="img-list-joint">
+										<div class="speaker-info-joint">
+											<h3 class="name-list"><b><a href="https://www.cs.toronto.edu/~pulkit/" target="_blank">Pulkit Agrawal</a></b></h3>
+											<div class="info-list">
+												Associate Professor<br>
+												MIT, USA
+											</div>
+										</div>
+									</div>
+									<div class="joint-speaker-item">
+										<img src="images/DrHong.png" alt="Dr. Hong" class="img-list-joint">
+										<div class="speaker-info-joint">
+											<h3 class="name-list"><b>Dr. Hong</b></h3>
+											<div class="info-list">
+												PhD<br>
+												MIT, USA
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="joint-talk-title">
+									<p class="talk-list">
+										<b>Joint Talk:</b> Towards Robotic Scientists that can perform physical experiments.
+									</p>
+								</div>
+							</div>
+							<hr style="width:80%;text-align:left;margin-left:5">
 
 							<div class="speaker">
 								<img src="images/josie.jpg" alt="Josie Hughes" class="img-list">
@@ -891,6 +922,79 @@ var x = setInterval(function() {
 						text-decoration: underline;
 					}
 
+					/* 共同演讲者样式 */
+					.joint-speaker {
+						flex-direction: column;
+						min-height: auto;
+						padding: 2rem;
+					}
+					
+					.joint-speaker-row {
+						display: flex;
+						justify-content: space-around;
+						align-items: flex-start;
+						gap: 2rem;
+						margin-bottom: 2rem;
+						flex-wrap: wrap;
+					}
+					
+					.joint-speaker-item {
+						display: flex;
+						flex-direction: column;
+						align-items: center;
+						text-align: center;
+						flex: 1;
+						min-width: 280px;
+					}
+					
+					.img-list-joint {
+						width: 160px;
+						height: 160px;
+						border-radius: 20px;
+						object-fit: cover;
+						border: 3px solid rgba(74, 144, 226, 0.2);
+						margin-bottom: 1rem;
+						transition: all 0.3s ease;
+					}
+					
+					.joint-speaker:hover .img-list-joint {
+						border-color: rgba(74, 144, 226, 0.5);
+						box-shadow: 0 8px 24px rgba(74, 144, 226, 0.2);
+					}
+					
+					.speaker-info-joint {
+						text-align: center;
+						color: #2C3E50;
+					}
+					
+					.speaker-info-joint h3.name-list {
+						color: #2C3E50;
+						margin-bottom: 0.5rem;
+						font-size: 1.3rem;
+						font-weight: 700;
+						line-height: 1.2;
+					}
+					
+					.speaker-info-joint .info-list {
+						color: #6C757D;
+						font-size: 0.9rem;
+						line-height: 1.4;
+					}
+					
+					.joint-talk-title {
+						text-align: center;
+						padding-top: 1rem;
+						border-top: 2px solid rgba(74, 144, 226, 0.2);
+					}
+					
+					.joint-talk-title .talk-list {
+						color: #2C3E50;
+						font-size: 1.1rem;
+						line-height: 1.6;
+						font-weight: 600;
+						margin: 0;
+					}
+
 					/* 响应式设计 */
 					@media screen and (max-width: 768px) {
 						.speaker {
@@ -906,6 +1010,17 @@ var x = setInterval(function() {
 						.speaker-info {
 							text-align: center;
 							min-height: auto;
+						}
+						
+						.joint-speaker-row {
+							flex-direction: column;
+							align-items: center;
+						}
+						
+						.joint-speaker-item {
+							min-width: auto;
+							width: 100%;
+							margin-bottom: 2rem;
 						}
 					}
 					</style>
