@@ -340,6 +340,88 @@ var x = setInterval(function() {
 				margin: 2rem 0;
 				opacity: 0.6;
 			}
+
+			/* Zoom部分样式 */
+.zoom-section {
+    margin: 2rem 0;
+    display: flex;
+    justify-content: center;
+}
+
+.zoom-container {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, rgba(74, 144, 226, 0.1), rgba(139, 126, 200, 0.05));
+    backdrop-filter: blur(10px);
+    padding: 1.5rem 2rem;
+    border-radius: 16px;
+    border: 2px solid rgba(74, 144, 226, 0.2);
+    box-shadow: 0 8px 24px rgba(74, 144, 226, 0.15);
+    transition: all 0.3s ease;
+}
+
+.zoom-container:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(74, 144, 226, 0.2);
+    border-color: rgba(74, 144, 226, 0.4);
+}
+
+.zoom-icon {
+    font-size: 2rem;
+    margin-right: 1.5rem;
+}
+
+.zoom-content {
+    text-align: center;
+}
+
+.zoom-content h4 {
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.zoom-join-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--primary-blue), var(--soft-purple));
+    color: white !important;
+    padding: 0.75rem 1.5rem;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    margin-bottom: 0.5rem;
+}
+
+.zoom-join-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(74, 144, 226, 0.4);
+    color: white !important;
+    text-decoration: none;
+}
+
+.meeting-info {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0;
+    font-style: italic;
+}
+
+/* 响应式设计 */
+@media screen and (max-width: 768px) {
+    .zoom-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.5rem;
+    }
+    
+    .zoom-icon {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+}
 		</style>
 	</head>
 	<body class="is-preload">
@@ -366,6 +448,7 @@ var x = setInterval(function() {
 					</div>
 				</div>
 			</section>
+
 
 		<!-- Wrapper -->
 			<div id="wrapper">
@@ -399,9 +482,21 @@ var x = setInterval(function() {
 								</div>
 							</div>
 
+							<div class="zoom-section">
+							<div class="zoom-container">
+								<div class="zoom-icon">🔗</div>
+								<div class="zoom-content">
+									<h4>Join Zoom Meeting</h4>
+									<a href="https://purdue-edu.zoom.us/j/95356529482?pwd=meODeoFDtaqrSb1DbwXP312tu9O1XY.1" target="_blank" class="zoom-join-btn">
+										Click to Join Meeting
+									</a>
+									<p class="meeting-info">Meeting ID: 953 5652 9482 | Passcode: 249906</p>
+								</div>
+							</div>
+						</div>
+
 							<br>
-							<br>
-							<br>
+							<br>					
 							<p>
 								<!-- TODO: -->
 								The accelerating pace of scientific research demands more efficient, accurate, and comprehensive methodologies that can transcend the limitations of traditional research approaches. Current scientific practices face significant challenges: manual experimentation is time-consuming and resource-intensive, while multidisciplinary research requires integration of knowledge that often exceeds individual researchers' expertise. This workshop explores a transformative vision: the development of embodied AI systems capable of conducting end-to-end scientific research across multiple disciplines.
